@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <UserSecretsId>c9f9bbf8-5123-4746-b003-324d6c2c9076</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Abstract\" />
+    <None Remove="Concrete\" />
+    <None Remove="Concrete\InMemory\" />
+    <None Remove="Concrete\EntityFramework\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\InMemory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+</Project>
