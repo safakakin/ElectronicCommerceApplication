@@ -9,7 +9,6 @@
     <None Remove="Abstract\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Concrete\" />
     <Folder Include="Abstract\" />
   </ItemGroup>
   <ItemGroup>
