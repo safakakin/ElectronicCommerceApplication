@@ -13,8 +13,4 @@
 	  <None Remove="Utilities\" />
 	  <None Remove="Utilities\Results\" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Utilities\" />
-	  <Folder Include="Utilities\Results\" />
-	</ItemGroup>
 </Project>
