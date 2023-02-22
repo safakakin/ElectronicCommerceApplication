@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation.FluentValidation;
 using Core.Utilities.Business;
@@ -27,6 +29,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -40,7 +43,7 @@ namespace Business.Concrete
             return new Result(true, Messages.ProductAdded);
             
         }
-
+        [CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
             if (DateTime.Now.Hour==11)
